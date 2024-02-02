@@ -1,10 +1,12 @@
 'use strict';
 
-const balls = 12;
-const border = 0.01;
-const d = 0.5;
+let result = 0;
+const borderX2 = 0.02;
+const diameter = 0.5;
 
-for (let i = 1; i <= balls; i++){
-  radius = 4 / 3 * 3.14 * ((d *2 - border * 2)) ** 3 * i;
-console.log(`${balls}`)
+for (let n = 0; n < 12; n++){
+  let currentDiameter = diameter + borderX2*n;
+  let currentVolume = 4 / 3 * Math.PI * ((currentDiameter/2) **3);
+result = result + currentVolume;
 }
+console.log(`Sum of volumes of 12 balls equals ${result} cubic meters`)
